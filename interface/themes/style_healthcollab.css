@@ -135,6 +135,22 @@ a:hover {
     font-size: 6pt;
 }
 
+.misimg {
+    display:none;
+}
+
+.support_link {
+    display:none;
+}
+
+.help_link {
+    display:none;
+}
+
+.1234 {
+    display:none;
+}
+
 .title {
     font-family: sans-serif;
     font-size: 12pt;
@@ -149,6 +165,7 @@ a:hover {
     font-weight: bold;
     text-decoration: none;
     color: #000000;
+    display:none;
 }
 
 .title_bar_top {
@@ -163,11 +180,11 @@ a:hover {
  * Here we have taken variables from globals.php and turned them into CSS classes 
  * these should be used in place of the GLOBAL variables -- JRM March 2008
  *=============================================================*/
-.body_top { background-color: #eae6ff; margin: 8px }    /* $top_bg_line */
+.body_top { background-color: #FFFFFF; margin: 8px }    /* $top_bg_line */
 .bgcolor2 { background-color: #eae6ff; }    /* $GLOBALS['style']['BGCOLOR2'] */
 .body_bottom { background: url('../pic/aquabg.gif') repeat; margin: 8px }  /* $bottom_bg_line */
 .body_title { background-color: #FFF; }  /* $title_bg_line */
-.body_nav { background-color: #eae6ff; }    /* $nav_bg_line */
+.body_nav { background-color: #FFFFFF; }    /* $nav_bg_line */
 .body_filler { background-color: #f7f0d5; } /* $login_filler_line */
 .body_login { background: url('../pic/aquabg.gif') repeat; } /* $login_body_line */
 .table_bg { background-color: #ccc; }           /* $table_bg */
@@ -177,7 +194,7 @@ a:hover {
 .bottom_line { background: url('../pic/aquabg.gif') repeat; }    /* $GLOBALS['style']['BOTTOM_BG_LINE'] */
 .logobar { background-color: #FFFFFF; height: 120px; }                 /* $GLOBALS['logoBarHeight'] */
 .navbar { height: 22px; }                   /* $GLOBALS['navBarHeight'] */
-.titlebar { height: 20px; }                 /* $GLOBALS['titleBarHeight'] */
+.titlebar { height: 20px; display:none;}                 /* $GLOBALS['titleBarHeight'] */
 
 
 /* style taken out of the addressbook code and put here instead */

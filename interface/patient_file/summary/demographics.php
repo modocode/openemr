@@ -534,10 +534,10 @@ $(window).load(function() {
       $portalUserSetting = false;
     }
   }
-  if (!($portalUserSetting)) {
-    // Show that the patient has not authorized portal access
-    echo "<td style='padding-left:1em;'>" . htmlspecialchars( xl('Patient has not authorized the Patient Portal.'), ENT_NOQUOTES) . "</td>";
-  }
+  // if (!($portalUserSetting)) {
+  //   // Show that the patient has not authorized portal access
+  //   echo "<td style='padding-left:1em;'>" . htmlspecialchars( xl('Patient has not authorized the Patient Portal.'), ENT_NOQUOTES) . "</td>";
+  // }
   //Patient Portal
 
   // If patient is deceased, then show this (along with the number of days patient has been deceased for)
@@ -625,7 +625,7 @@ if ($GLOBALS['patient_id_category_name']) {
     <!-- start left column div -->
     <div style='float:left; margin-right:20px'>
      <table cellspacing=0 cellpadding=0>
-      <tr<?php if ($GLOBALS['athletic_team']) echo " style='display:none;'"; ?>>
+<!--       <tr<?php if ($GLOBALS['athletic_team']) echo " style='display:none;'"; ?>>
        <td>
 <?php
 // Billing expand collapse widget
@@ -692,9 +692,9 @@ expand_collapse_widget($widgetTitle, $widgetLabel, $widgetButtonLabel,
   echo "</table></td></tr></td></tr></table><br>";
  }
 ?>
-        </div> <!-- required for expand_collapse_widget -->
+        </div>
        </td>
-      </tr>
+      </tr> -->
       <tr>
        <td>
 <?php

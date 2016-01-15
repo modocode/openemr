@@ -611,7 +611,7 @@ function genFindBlock() {
    }
   }
 <?php } ?>
-  f.popups.disabled = (active_pid == 0);
+  // f.popups.disabled = (active_pid == 0);
  }
 
 function goHome() {
@@ -1060,7 +1060,7 @@ if ($GLOBALS['athletic_team']) {
 ?>
 
 <?php if ( ( $GLOBALS['concurrent_layout'] == 2) || ($GLOBALS['concurrent_layout'] == 3) ) { ?>
-<center>
+<center style="display:none;">
 <select name='sel_frame' style='background-color:transparent;font-size:9pt;width:<?php echo $GLOBALS['athletic_team'] ? 47 : 100; ?>%;'>
  <option value='0'><?php xl('Default','e'); ?></option>
  <option value='1'><?php xl('Top','e'); ?></option>
@@ -1069,7 +1069,7 @@ if ($GLOBALS['athletic_team']) {
 <?php if ($GLOBALS['athletic_team']) genPopupsList('width:47%'); ?>
 </center>
 
-<table cellpadding='0' cellspacing='0' border='0' width='100%'>
+<table cellpadding='0' cellspacing='0' border='0' width='100%' style="display:none;">
  <tr>
   <td class='smalltext' nowrap>
    <input type='checkbox' name='cb_top' onclick='toggleFrame(1)' checked />
@@ -1077,7 +1077,7 @@ if ($GLOBALS['athletic_team']) {
   </td>
   <td class='smalltext' align='right' nowrap>
    <b><?php xl('Bot','e') ?></b>
-   <input type='checkbox' name='cb_bot' onclick='toggleFrame(2)' <?php if (empty($GLOBALS['athletic_team'])) echo 'checked '; ?>/>
+   <input type='checkbox' name='cb_bot' onclick='toggleFrame(2)' />
   </td>
  </tr>
 </table>
@@ -1332,7 +1332,7 @@ if (!empty($reg)) {
     </ul>
   </li>
   <?php // TajEmo Work by CB 2012/06/21 10:41:15 AM hides fees if disabled in globals ?>
-  <?php if(!isset($GLOBALS['enable_fees_in_left_menu']) || $GLOBALS['enable_fees_in_left_menu'] == 1){ ?>
+  <?php if(!isset($GLOBALS['enable_fees_in_left_menu']) || $GLOBALS['enable_fees_in_left_menu'] == 0){ ?>
   <li><a class="collapsed" id="feeimg" ><span><?php xl('Fees','e') ?></span></a>
     <ul>
       <?php genMiscLink('RBot','cod','2',xl('Fee Sheet'),'patient_file/encounter/load_form.php?formname=fee_sheet'); ?>
@@ -1375,7 +1375,7 @@ if (!empty($reg)) {
 			  <?php }
 		} ?>
     </ul>
-  </li>
+  </li> 
   <?php }?>
   <?php // if ($GLOBALS['inhouse_pharmacy'] && acl_check('admin', 'drugs')) genMiscLink('RTop','adm','0',xl('Inventory'),'drugs/drug_inventory.php'); ?>
 <?php if ($GLOBALS['inhouse_pharmacy'] && acl_check('admin', 'drugs')) { ?>
@@ -1415,7 +1415,7 @@ if (!empty($reg)) {
   </li>
   <?php } ?>
   <?php if (!$disallowed['adm']) { ?>
-  <li><a class="collapsed" id="admimg" ><span><?php xl('Administration','e') ?></span></a>
+    <!-- <li><a class="collapsed" id="admimg" ><span><?php xl('Administration','e') ?></span></a>
     <ul>
       <?php if (acl_check('admin', 'super'    )) genMiscLink('RTop','adm','0',xl('Globals'),'super/edit_globals.php'); ?>
       <?php if (acl_check('admin', 'users'    )) genMiscLink('RTop','adm','0',xl('Facilities'),'usergroup/facilities.php'); ?>
@@ -1456,7 +1456,7 @@ if (!empty($reg)) {
         </ul>
       </li>
     </ul>
-  </li>
+  </li> -->
   <?php } ?>
   <li><a class="collapsed" id="repimg" ><span><?php xl('Reports','e') ?></span></a>
     <ul>
@@ -1608,7 +1608,7 @@ if (!empty($reg)) {
       <?php // genTreeLink('RTop','rep','Other'); ?>
     </ul>
   </li>
-  <li><a class="collapsed" id="misimg" ><span><?php xl('Miscellaneous','e') ?></span></a>
+<!--   <li><a class="collapsed" id="misimg" ><span><?php xl('Miscellaneous','e') ?></span></a>
     <ul>
       <?php genTreeLink('RTop','ped',xl('Patient Education')); ?> 
       <?php genTreeLink('RBot','aun',xl('Authorizations')); ?>
@@ -1625,7 +1625,7 @@ if (!empty($reg)) {
       <?php if(acl_check('patients','docs')) genMiscLink('RTop','adm','0',xl('New Documents'),'../controller.php?document&list&patient_id=00'); ?>
       <?php if (acl_check('patients','docs')) genMiscLink('RTop','adm','0',xl('Document Templates'),'super/manage_document_templates.php'); ?>
     </ul>
-  </li>
+  </li> -->
 
 <?php } // end not athletic team ?>
 
@@ -1695,25 +1695,27 @@ if (!empty($reg)) {
 
 <?php
 if (!$GLOBALS['athletic_team']) {
-  genPopupsList();
-  echo "<hr />\n";
-  genFindBlock();
-  echo "<hr />\n";
+  // genPopupsList();
+  // echo "<hr />\n";
+  // genFindBlock();
+  // echo "<hr />\n";
 }
 ?>
 
 <?php if (!empty($GLOBALS['online_support_link'])) { ?>
-<a href='<?php echo $GLOBALS["online_support_link"]; ?>' target="_blank" id="support_link" class='css_button' onClick="top.restoreSession()"><span><?php xl('Online Support','e'); ?></span></a>
+<!-- <a href='<?php echo $GLOBALS["online_support_link"]; ?>' target="_blank" id="support_link" class='css_button' onClick="top.restoreSession()"><span><?php xl('Online Support','e'); ?></span></a> -->
 <?php } ?>
 
-<input type='hidden' name='findBy' value='Last' />
+<!-- <input type='hidden' name='findBy' value='Last' />
 <input type="hidden" name="searchFields" id="searchFields"/>
-<input type="hidden" name="search_service_code" value='' />
+<input type="hidden" name="search_service_code" value='' /> -->
 
 </form>
 
 <script language='JavaScript'>
-syncRadios();
+toggleFrame(2);
+// syncRadios();
+
 </script>
 
 </body>

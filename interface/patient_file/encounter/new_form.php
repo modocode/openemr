@@ -18,19 +18,19 @@ $esignApi = new Esign\Api();
 
 function openNewForm(sel) {
  top.restoreSession();
-<?php if ($GLOBALS['concurrent_layout']) { ?>
-  FormNameValueArray = sel.split('formname=');
-  if(FormNameValueArray[1] == 'newpatient')
-   {
-    parent.location.href = sel
-   }
-  else
-   {
-	parent.Forms.location.href = sel;
-   }
-<?php } else { ?>
+// <?php if ($GLOBALS['concurrent_layout']) { ?>
+//   FormNameValueArray = sel.split('formname=');
+//   if(FormNameValueArray[1] == 'newpatient')
+//    {
+//     parent.location.href = sel
+//    }
+//   else
+//    {
+// 	parent.Forms.location.href = sel;
+//    }
+// <?php } else { ?>
   top.frames['Main'].location.href = sel;
-<?php } ?>
+// <?php } ?>
 }
 function toggleFrame1(fnum) {
   top.frames['left_nav'].document.forms[0].cb_top.checked=false;
